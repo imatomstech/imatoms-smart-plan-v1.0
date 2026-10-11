@@ -547,11 +547,7 @@ textarea.fi{resize:vertical;min-height:65px;}
           <label style="display:block;font-size:0.7rem;color:rgba(255,255,255,0.4);margin-bottom:4px;">หน่วยงาน (iMATOMs Function) *</label>
           <select id="reg-dept" class="fi">
             <option value="">— เลือกหน่วยงาน —</option>
-            <option value="B1">B1 · iMATOMs Management</option>
-            <option value="B2">B2 · ESG Management</option>
-            <option value="B3">B3 · Internal Control & Process</option>
-            <option value="B4">B4 · QSHE Management</option>
-            <option value="B5">B5 · Standard & Operation Excellence</option>
+            <optgroup label="🚀 Platform V3.0 · Business Units"><option value="P01">🏢 P01 · Facility Management</option><option value="P02">📡 P02 · IoT Monitoring & Alarm</option><option value="P03">📊 P03 · Measurement & Validation</option><option value="P04">🏆 P04 · Energy Consultant & Awards</option><option value="P05">🤖 P05 · Robotics & Automation</option><option value="P07">🍜 P07 · Isan Food Market</option><option value="P08">☕ P08 · MeeHang Coffee</option></optgroup><optgroup label="🧩 iMATOMs System"><option value="S01">🔧 S01 · Reliability</option><option value="S02">⚗️ S02 · Quality & Risk</option><option value="S03">💰 S03 · Cost Efficiency</option><option value="S04">🌱 S04 · ESG</option><option value="S05">🎓 S05 · Staff Academy</option><option value="S06">🛡️ S06 · Safety & Well-being</option><option value="S07">🔬 S07 · Analysis System</option><option value="S08">🧠 S08 · Intelligence System</option><option value="S09">🔔 S09 · Alert & Warning System</option><option value="S10">🗄️ S10 · Database</option><option value="S11">⚙️ S11 · Configuration</option><option value="S12">☁️ S12 · Cloud</option><option value="S13">🔐 S13 · Authorize System</option></optgroup>
           </select>
         </div>
         <div>
@@ -979,7 +975,7 @@ textarea.fi{resize:vertical;min-height:65px;}
     ══════════════════════════════════ -->
     <div class="page" id="page-stakeholder">
       <div class="sec-hdr">
-        <div><h2>🌐 Stakeholder Management</h2><p>13 Organizations · iMATOMs Support</p></div>
+        <div><h2>🌐 Stakeholder Management</h2><p>Customers · ลูกค้าของ iMATOMs (กด ✏️ เพื่อแก้ชื่อลูกค้า)</p></div>
       </div>
       <div class="sh-grid" id="stakeholder-grid"></div>
     </div>
@@ -989,9 +985,9 @@ textarea.fi{resize:vertical;min-height:65px;}
     ══════════════════════════════════ -->
     <div class="page" id="page-imatoms">
       <div class="sec-hdr">
-        <div><h2>⚙️ iMATOMs Functions</h2><p>B1–B5 iMATOMs · TKO</p></div>
+        <div><h2>⚙️ iMATOMs Functions</h2><p>Platform V3.0 Business Units · iMATOMs System Modules</p></div>
       </div>
-      <div class="sh-grid" id="imatoms-grid"></div>
+      <div id="imatoms-grid"></div>
     </div>
 
     <!-- ══════════════════════════════════
@@ -1179,12 +1175,8 @@ textarea.fi{resize:vertical;min-height:65px;}
         <div><h2>📊 Dashboard Monitor</h2><p>Team Progress · iMATOMs · Real-time</p></div>
         <div style="display:flex;gap:6px;">
           <select id="mon-filter-dept" class="fi" style="width:160px;padding:5px 8px;" onchange="renderMonitor()">
-            <option value="">All Functions</option>
-            <option value="B1">B1 · iMATOMs Mgmt</option>
-            <option value="B2">B2 · ESG</option>
-            <option value="B3">B3 · Process</option>
-            <option value="B4">B4 · QSHE</option>
-            <option value="B5">B5 · Standard</option>
+            <option value="">All Functions / Units</option>
+            <optgroup label="🚀 Platform V3.0 · Business Units"><option value="P01">🏢 P01 · Facility Management</option><option value="P02">📡 P02 · IoT Monitoring & Alarm</option><option value="P03">📊 P03 · Measurement & Validation</option><option value="P04">🏆 P04 · Energy Consultant & Awards</option><option value="P05">🤖 P05 · Robotics & Automation</option><option value="P07">🍜 P07 · Isan Food Market</option><option value="P08">☕ P08 · MeeHang Coffee</option></optgroup><optgroup label="🧩 iMATOMs System"><option value="S01">🔧 S01 · Reliability</option><option value="S02">⚗️ S02 · Quality & Risk</option><option value="S03">💰 S03 · Cost Efficiency</option><option value="S04">🌱 S04 · ESG</option><option value="S05">🎓 S05 · Staff Academy</option><option value="S06">🛡️ S06 · Safety & Well-being</option><option value="S07">🔬 S07 · Analysis System</option><option value="S08">🧠 S08 · Intelligence System</option><option value="S09">🔔 S09 · Alert & Warning System</option><option value="S10">🗄️ S10 · Database</option><option value="S11">⚙️ S11 · Configuration</option><option value="S12">☁️ S12 · Cloud</option><option value="S13">🔐 S13 · Authorize System</option></optgroup>
           </select>
           <button class="btn btn-c" onclick="renderMonitor()">↻ Refresh</button>
         </div>
@@ -2438,26 +2430,35 @@ textarea.fi{resize:vertical;min-height:65px;}
 // DATA CONSTANTS
 // ═══════════════════════════════════════════════════
 const STAKEHOLDERS = [
-  { code:'A1',  name:'CEO & CFSO Management',           icon:'👑', color:'#f59e0b' },
-  { code:'A2',  name:'Township Management',             icon:'🏙️', color:'#3b82f6' },
-  { code:'A3',  name:'Business Strategy & Investment',  icon:'📈', color:'#10b981' },
-  { code:'A4',  name:'BEAT Discovery',                  icon:'💡', color:'#a855f7' },
-  { code:'A5',  name:'Procurement',                     icon:'📦', color:'#f97316' },
-  { code:'A6',  name:'About Food',                      icon:'🍽️', color:'#ec4899' },
-  { code:'A7',  name:'Live & Play Business',            icon:'🎯', color:'#00f5ff' },
-  { code:'A8',  name:'Project Delivery',                icon:'🏗️', color:'#f59e0b' },
-  { code:'A9',  name:'REIT Management',                 icon:'🏢', color:'#3b82f6' },
-  { code:'A10', name:'SAMA Garden',                     icon:'🌿', color:'#10b981' },
-  { code:'A11', name:'BHIRAJ & Beyond Venture',         icon:'🚀', color:'#a855f7' },
-  { code:'A12', name:'Workplace Management',            icon:'💼', color:'#f97316' },
-  { code:'A13', name:'Another Business',                icon:'🌐', color:'#6b7280' },
+  { code:"C1", name:"Customer 1", icon:"🏢", color:"#38bdf8", group:'customer' },
+  { code:"C2", name:"Customer 2", icon:"🏬", color:"#10b981", group:'customer' },
+  { code:"C3", name:"Customer 3", icon:"🏭", color:"#f59e0b", group:'customer' },
+  { code:"C4", name:"Customer 4", icon:"🏨", color:"#a855f7", group:'customer' },
+  { code:"C5", name:"Customer 5", icon:"🏥", color:"#ec4899", group:'customer' },
 ];
+// ชื่อลูกค้าที่แก้ไขเอง (หน้า All Stakeholders → ✏️)
+(function(){ try { var o = JSON.parse(localStorage.getItem('imt_customer_names')) || {}; STAKEHOLDERS.forEach(function(s){ if (o[s.code]) s.name = o[s.code]; }); } catch(e) {} })();
 const IMATOMS_FNS = [
-  { code:'B1', name:'iMATOMs Management',               icon:'⚙️',  color:'#00f5ff' },
-  { code:'B2', name:'ESG Management',                   icon:'🌍', color:'#10b981' },
-  { code:'B3', name:'Internal Control & Process',       icon:'📐', color:'#a855f7' },
-  { code:'B4', name:'QSHE Management',                  icon:'🛡️', color:'#3b82f6' },
-  { code:'B5', name:'Standard & Operation Excellence', icon:'⭐', color:'#f59e0b' },
+  { code:"P01", name:"Facility Management", icon:"🏢", color:"#f97316", group:'platform', tag:"01 · HARD FM", sub:"iMATOMs FM" },
+  { code:"P02", name:"IoT Monitoring & Alarm", icon:"📡", color:"#38bdf8", group:'platform', tag:"02 · IoT", sub:"iMATOMs IoT" },
+  { code:"P03", name:"Measurement & Validation", icon:"📊", color:"#2dd4bf", group:'platform', tag:"03 · M&V", sub:"iMATOMs M&V" },
+  { code:"P04", name:"Energy Consultant & Awards", icon:"🏆", color:"#6366f1", group:'platform', tag:"04 · ADVISORY", sub:"iMATOMs adV" },
+  { code:"P05", name:"Robotics & Automation", icon:"🤖", color:"#22c55e", group:'platform', tag:"05 · ROBOTICS", sub:"iMATOMs BOT" },
+  { code:"P07", name:"Isan Food Market", icon:"🍜", color:"#f43f5e", group:'platform', tag:"07 · MARKET", sub:"Isan Food Market" },
+  { code:"P08", name:"MeeHang Coffee", icon:"☕", color:"#a855f7", group:'platform', tag:"08 · CAFE", sub:"MeeHang Coffee" },
+  { code:"S01", name:"Reliability", icon:"🔧", color:'#fb923c', group:'system', tag:'iMATOMs SYSTEM', sub:'iMATOMs System' },
+  { code:"S02", name:"Quality & Risk", icon:"⚗️", color:'#fb923c', group:'system', tag:'iMATOMs SYSTEM', sub:'iMATOMs System' },
+  { code:"S03", name:"Cost Efficiency", icon:"💰", color:'#fb923c', group:'system', tag:'iMATOMs SYSTEM', sub:'iMATOMs System' },
+  { code:"S04", name:"ESG", icon:"🌱", color:'#fb923c', group:'system', tag:'iMATOMs SYSTEM', sub:'iMATOMs System' },
+  { code:"S05", name:"Staff Academy", icon:"🎓", color:'#fb923c', group:'system', tag:'iMATOMs SYSTEM', sub:'iMATOMs System' },
+  { code:"S06", name:"Safety & Well-being", icon:"🛡️", color:'#fb923c', group:'system', tag:'iMATOMs SYSTEM', sub:'iMATOMs System' },
+  { code:"S07", name:"Analysis System", icon:"🔬", color:'#fb923c', group:'system', tag:'iMATOMs SYSTEM', sub:'iMATOMs System' },
+  { code:"S08", name:"Intelligence System", icon:"🧠", color:'#fb923c', group:'system', tag:'iMATOMs SYSTEM', sub:'iMATOMs System' },
+  { code:"S09", name:"Alert & Warning System", icon:"🔔", color:'#fb923c', group:'system', tag:'iMATOMs SYSTEM', sub:'iMATOMs System' },
+  { code:"S10", name:"Database", icon:"🗄️", color:'#fb923c', group:'system', tag:'iMATOMs SYSTEM', sub:'iMATOMs System' },
+  { code:"S11", name:"Configuration", icon:"⚙️", color:'#fb923c', group:'system', tag:'iMATOMs SYSTEM', sub:'iMATOMs System' },
+  { code:"S12", name:"Cloud", icon:"☁️", color:'#fb923c', group:'system', tag:'iMATOMs SYSTEM', sub:'iMATOMs System' },
+  { code:"S13", name:"Authorize System", icon:"🔐", color:'#fb923c', group:'system', tag:'iMATOMs SYSTEM', sub:'iMATOMs System' },
 ];
 
 // ═══════════════════════════════════════════════════
@@ -2497,8 +2498,8 @@ var PAGE_META = {
   progress:    ['Daily Progress', 'บันทึกความคืบหน้า · ส่งผู้บริหาร/ทีม', '＋ Add Progress', 'openAddProgress()'],
   weekly:      ['Weekly Report', 'ภาพรวมรายสัปดาห์', '', ''],
   monthly:     ['Monthly Executive', 'รายงานสรุปผู้บริหาร', '', ''],
-  stakeholder: ['Stakeholders', '13 Organizations · iMATOMs', '', ''],
-  imatoms:     ['iMATOMs Functions', 'B1–B5 · iMATOMs · TKO', '', ''],
+  stakeholder: ['Stakeholders', 'Customers · ลูกค้าของ iMATOMs', '', ''],
+  imatoms:     ['iMATOMs Functions', 'Platform V3.0 · iMATOMs System', '', ''],
   toilet:      ['TOILET Assessment', 'T·O·I·L·E·T Framework', '＋ Assess', 'openToiletModal()'],
   dmaic:       ['DMAIC Projects', 'Six Sigma · Process Improvement', '＋ Project', 'openDMAICModal()'],
   inspect:     ['Inspection & Visit Site', 'สำรวจหน่วยงาน · Site Survey · Root Cause Analysis', '＋ Inspection', 'openInspectModal()'],
@@ -3032,10 +3033,11 @@ function renderStakeholder() {
         var shProgs  = progs.filter(p => p.sh === s.code);
         var pending  = shTasks.filter(t => parseInt(t.prog||0) < 100).length;
         var done     = shTasks.filter(t => parseInt(t.prog||0) >= 100).length;
-        return '<div class="sh-card" onclick="filterBySH(\''+s.code+'\')">'+
+        return '<div class="sh-card" style="position:relative;" onclick="filterBySH(\''+s.code+'\')">'+
+            '<button title="แก้ชื่อลูกค้า" onclick="event.stopPropagation();renameCustomer(\''+s.code+'\')" style="position:absolute;top:10px;right:10px;width:26px;height:26px;border-radius:7px;border:1px solid var(--border);background:rgba(255,255,255,0.04);color:var(--text3);cursor:pointer;font-size:0.7rem;">✏️</button>'+
             '<div class="sh-icon">'+s.icon+'</div>'+
-            '<div class="sh-name">'+s.name+'</div>'+
-            '<div class="sh-code" style="color:'+s.color+';">'+s.code+' · iMATOMs Stakeholder</div>'+
+            '<div class="sh-name">'+escHtml(s.name)+'</div>'+
+            '<div class="sh-code" style="color:'+s.color+';">'+s.code+' · iMATOMs Customer</div>'+
             '<div class="sh-stat">'+
               (pending?'<span class="badge b-y">'+pending+' pending</span>':'')+
               (done?'<span class="badge b-g">'+done+' done</span>':'')+
@@ -3046,21 +3048,53 @@ function renderStakeholder() {
     }).join('');
 }
 
+function renameCustomer(code) {
+    var s = STAKEHOLDERS.find(function(x){ return x.code === code; });
+    if (!s) return;
+    var name = prompt('ชื่อลูกค้า ('+code+'):', s.name);
+    if (name === null) return;
+    name = name.trim() || ('Customer ' + code.replace(/\D/g,''));
+    var o = {};
+    try { o = JSON.parse(localStorage.getItem('imt_customer_names')) || {}; } catch(e) {}
+    o[code] = name;
+    try { localStorage.setItem('imt_customer_names', JSON.stringify(o)); } catch(e) {}
+    s.name = name;
+    populateSelects();
+    renderStakeholder();
+    showToast('✅ เปลี่ยนชื่อเป็น "'+name+'" แล้ว','success');
+}
+
 function renderImatoms() {
     var tasks = load(K.tasks);
     var grid = document.getElementById('imatoms-grid');
     if (!grid) return;
-    grid.innerHTML = IMATOMS_FNS.map(function(s) {
+    var card = function(s) {
         var shTasks = tasks.filter(t => t.sh === s.code);
-        return '<div class="sh-card" onclick="filterBySH(\''+s.code+'\')">'+
-            '<div class="sh-icon">'+s.icon+'</div>'+
-            '<div class="sh-name">'+s.name+'</div>'+
-            '<div class="sh-code" style="color:'+s.color+';">'+s.code+' · iMATOMs Function</div>'+
+        var pending = shTasks.filter(t => parseInt(t.prog||0) < 100).length;
+        var done    = shTasks.filter(t => parseInt(t.prog||0) >= 100).length;
+        return '<div class="sh-card" onclick="filterBySH(\''+s.code+'\')" style="border-color:'+s.color+'33;">'+
+            '<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">'+
+              '<div style="width:40px;height:40px;border-radius:11px;background:linear-gradient(135deg,'+s.color+','+s.color+'99);display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0;box-shadow:0 4px 14px '+s.color+'33;">'+s.icon+'</div>'+
+              '<div style="font-size:0.58rem;letter-spacing:1px;color:var(--text3);font-family:Orbitron,sans-serif;">'+escHtml(s.tag||s.code)+'</div>'+
+            '</div>'+
+            '<div class="sh-name">'+escHtml(s.name)+'</div>'+
+            '<div class="sh-code" style="color:'+s.color+';">'+s.code+' · '+escHtml(s.sub||'iMATOMs')+'</div>'+
             '<div class="sh-stat">'+
-              (shTasks.length?'<span class="badge b-c">'+shTasks.length+' tasks</span>':'<span class="badge" style="background:rgba(255,255,255,0.05);color:var(--text3);">ยังไม่มีงาน</span>')+
+              (pending?'<span class="badge b-y">'+pending+' pending</span>':'')+
+              (done?'<span class="badge b-g">'+done+' done</span>':'')+
+              (!pending&&!done?'<span class="badge" style="background:rgba(255,255,255,0.05);color:var(--text3);">ยังไม่มีงาน</span>':'')+
             '</div>'+
         '</div>';
-    }).join('');
+    };
+    var section = function(title, sub, list) {
+        return '<div style="display:flex;align-items:baseline;gap:10px;margin:4px 0 10px;">'+
+            '<div style="font-family:Orbitron,sans-serif;font-size:0.78rem;font-weight:700;color:var(--cyan);">'+title+'</div>'+
+            '<div style="font-size:0.65rem;color:var(--text3);">'+sub+'</div></div>'+
+            '<div class="sh-grid" style="margin-bottom:22px;">'+list.map(card).join('')+'</div>';
+    };
+    grid.innerHTML =
+        section('🚀 PLATFORM V3.0', 'TKO · iMATOMs Tech — Towards Sustainable Organization 2026', IMATOMS_FNS.filter(function(s){ return s.group === 'platform'; })) +
+        section('🧩 iMATOMs SYSTEM', 'System modules', IMATOMS_FNS.filter(function(s){ return s.group === 'system'; }));
 }
 
 // ═══════════════════════════════════════════════════
@@ -4253,7 +4287,7 @@ function showToast(msg, type) {
 // รหัสผ่าน admin เก็บเป็น SHA-256 hash (ไม่เก็บ plain text เพราะ repo เป็น public)
 function sha256Hex(ascii){function r(v,a){return(v>>>a)|(v<<(32-a));}var mp=Math.pow,mw=mp(2,32),res='',words=[],abl=ascii.length*8,hash=[],k=[],pc=0,isC={};ascii=unescape(encodeURIComponent(ascii));abl=ascii.length*8;for(var c=2;pc<64;c++){if(!isC[c]){for(var i=0;i<313;i+=c)isC[i]=c;hash[pc]=(mp(c,.5)*mw)|0;k[pc++]=(mp(c,1/3)*mw)|0;}}hash=hash.slice(0,8);ascii+='\x80';while(ascii.length%64-56)ascii+='\x00';for(i=0;i<ascii.length;i++){var j=ascii.charCodeAt(i);words[i>>2]|=j<<((3-i)%4)*8;}words[words.length]=((abl/mw)|0);words[words.length]=(abl);for(j=0;j<words.length;){var w=words.slice(j,j+=16),oh=hash;hash=hash.slice(0,8);for(i=0;i<64;i++){var w15=w[i-15],w2=w[i-2],a=hash[0],e=hash[4];var t1=hash[7]+(r(e,6)^r(e,11)^r(e,25))+((e&hash[5])^((~e)&hash[6]))+k[i]+(w[i]=(i<16)?w[i]:(w[i-16]+(r(w15,7)^r(w15,18)^(w15>>>3))+w[i-7]+(r(w2,17)^r(w2,19)^(w2>>>10)))|0);var t2=(r(a,2)^r(a,13)^r(a,22))+((a&hash[1])^(a&hash[2])^(hash[1]&hash[2]));hash=[(t1+t2)|0].concat(hash);hash[4]=(hash[4]+t1)|0;}for(i=0;i<8;i++)hash[i]=(hash[i]+oh[i])|0;}for(i=0;i<8;i++){for(j=3;j+1;j--){var b=(hash[i]>>(j*8))&255;res+=((b<16)?0:'')+b.toString(16);}}return res;}
 const ADMIN_USER = { username:'tkoplan', passHash:'3ac0cb50ceaf62cf58b391fb3fff0af34209cac578d0c335a13d1ab7783f19ce', name:'TKO Kittanan ONSEE',
-                     role:'Admin · iMATOMs', dept:'B1', isAdmin:true, status:'approved' };
+                     role:'Admin · iMATOMs', dept:'TKO', isAdmin:true, status:'approved' };
 const K_USERS    = 'imt_users_v1';
 const K_SESSION  = 'imt_session_v1';
 
